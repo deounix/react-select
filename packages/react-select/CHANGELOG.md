@@ -1,5 +1,11 @@
 # react-select
 
+## 5.0.0-beta.1
+
+### Patch Changes
+
+- [7fcec537](https://github.com/JedWatson/react-select/commit/7fcec537e75b80b3084b64db76150cfef9d2ee2f) [#4697](https://github.com/JedWatson/react-select/pull/4697) - Add the role of combobox and the required ARIA attributes to the Input and DummyInput components to allow JAWS support and a better screen reader experience overall.
+
 ## 5.0.0-beta.0
 
 ### Major Changes
