@@ -173,6 +173,8 @@ export interface Props<
   isDisabled: boolean;
   /** Is the select in a state of loading (async) */
   isLoading: boolean;
+  /* Is the select required */
+  isRequired: boolean;
   /**
    * Override the built-in logic to detect whether an option is disabled
    *
@@ -286,6 +288,7 @@ export const defaultProps = {
   isMulti: false,
   isRtl: false,
   isSearchable: true,
+  isRequired: false,
   isOptionDisabled: isOptionDisabledBuiltin,
   loadingMessage: () => 'Loading...',
   maxMenuHeight: 300,
@@ -1496,6 +1499,7 @@ export default class Select<
   renderInput() {
     const {
       isDisabled,
+      isRequired,
       isSearchable,
       inputId,
       inputValue,
@@ -1536,6 +1540,7 @@ export default class Select<
           onChange={noop}
           onFocus={this.onInputFocus}
           disabled={isDisabled}
+          required={isRequired}
           tabIndex={tabIndex}
           inputMode="none"
           form={form}
@@ -1554,6 +1559,7 @@ export default class Select<
         id={id}
         innerRef={this.getInputRef}
         isDisabled={isDisabled}
+        isRequired={isRequired}
         isHidden={inputIsHidden}
         onBlur={this.onInputBlur}
         onChange={this.handleInputChange}

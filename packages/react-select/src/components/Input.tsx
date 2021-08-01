@@ -22,6 +22,8 @@ export interface InputSpecificProps<
   isHidden: boolean;
   /** Whether the input is disabled */
   isDisabled?: boolean;
+  /** Whether the input required or not **/
+  isRequired?: boolean,
   /** The ID of the form that the input belongs to */
   form?: string;
   /** Set className for the input element */
@@ -90,7 +92,7 @@ const Input = <
   props: InputProps<Option, IsMulti, Group>
 ) => {
   const { className, cx, getStyles, value } = props;
-  const { innerRef, isDisabled, isHidden, inputClassName, ...innerProps } =
+  const { innerRef, isDisabled, isHidden, isRequired, inputClassName, ...innerProps } =
     cleanCommonProps(props);
 
   return (
@@ -104,6 +106,7 @@ const Input = <
         ref={innerRef}
         style={inputStyle(isHidden)}
         disabled={isDisabled}
+        required={isRequired}
         {...innerProps}
       />
     </div>
